@@ -6,6 +6,8 @@ import { Button } from "@mui/material";
 import '@fontsource/roboto'
 
 function App() {
+  
+
   return (
     <>
       <Box className="box" component="form"
@@ -17,7 +19,7 @@ function App() {
       >
         <Container className="box__containerText">
           <h1>Login</h1>
-          <p>Novo no site ? <a href="#">Registre-se</a>
+          <p>Novo no site ? <a href="/CreateAccount">Registre-se</a>
           </p>
         </Container>
 
