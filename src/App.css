@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: roboto;
+    background-image: url('https://img.freepik.com/vetores-gratis/fundo-branco-abstrato_23-2148806276.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.box__containerText h1{
+    color: #1d1c1c;
+}
+.box__containerText p{
+    font-size: 11px;
+    color: #1d1c1c;
+}
+.box__containerInput{
+    margin: 20px 0;
+}
+.box__containerInput a{
+    font-size: 13px;
+}
+.box_containerIcons{
+    margin: 30px;
+}
+.box_containerIcons p{
+    margin: 5px 0;
+}
