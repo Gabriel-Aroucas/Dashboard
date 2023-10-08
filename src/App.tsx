@@ -7,8 +7,23 @@ import '@fontsource/roboto'
 
 function App() {
   
+  const login = ()=>{
+    const Email = document.querySelector("#Email") as HTMLInputElement
+    const Password = document.querySelector("#Password") as HTMLInputElement
+
+    if(localStorage.getItem('Email') == Email.value && localStorage.getItem('Password') == Password.value){
+      alert('Sucesso' + '\n' + 'Em breve você será redirecionado ao painel de controle')
+      setTimeout(()=>{
+        window.location.href='painel'
+      },1000)
+    }else{
+      alert("Login ou senha incorretos")
+    }
+
+  }
 
   return (
+
     <>
       <Box className="box" component="form"
         sx={{
@@ -17,6 +32,7 @@ function App() {
           maxWidth: 400,
         }}
       >
+
         <Container className="box__containerText">
           <h1>Login</h1>
           <p>Novo no site ? <a href="/CreateAccount">Registre-se</a>
@@ -24,13 +40,13 @@ function App() {
         </Container>
 
         <Container className="box__containerInput">
-          <TextField variant="outlined" label="Email" name='Email' sx={{ width: "100%", margin: "10px 0" }}/>
-          <TextField variant="outlined" label="Senha" type='password' sx={{ width: "100%" }} />
+          <TextField variant="outlined" label="Email" name="Email" id="Email" sx={{ width: "100%", margin: "10px 0" }}/>
+          <TextField variant="outlined" label="Senha" type="password" id="Password" sx={{ width: "100%" }} />
           <a href="#">Esqueceu a senha ?</a>
 
         </Container>
         <Container className="box__containerButton">
-          <Button variant="contained" sx={{ width: "100%" }}>
+          <Button variant="contained" sx={{ width: "100%" }} onClick={login}>
             Login
           </Button>
         </Container>

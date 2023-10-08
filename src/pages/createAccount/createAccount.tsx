@@ -29,6 +29,9 @@ const createAccount = () => {
       localStorage.setItem("Secret", Secret.value);
 
       alert('Sucesso' + '\n' + 'Em breve você será redirecionado para a página de login')
+      setTimeout(() => {
+        window.location.href='/'
+      },1000);
     }
   };
 
