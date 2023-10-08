@@ -4,23 +4,33 @@ import { Container } from "@mui/material";
 import { Button } from "@mui/material";
 
 const createAccount = () => {
-  
   const storageAccount = () => {
+    document.addEventListener("submit", (e) => e.preventDefault());
+
     const Name = document.querySelector("#Name") as HTMLInputElement;
     const Lastname = document.querySelector("#Lastname") as HTMLInputElement;
     const Email = document.querySelector("#Email") as HTMLInputElement;
     const Password = document.querySelector("#Password") as HTMLInputElement;
     const Secret = document.querySelector("#Secret") as HTMLInputElement;
-    
+
+    if (
+      Name.value.length > 0 &&
+      Lastname.value.length > 0 &&
+      Email.value.length > 0 &&
+      Password.value.length > 0 &&
+      Secret.value.length > 0
+    ) {
       localStorage.setItem("Name", Name.value);
       localStorage.setItem("Lastname", Lastname.value);
       localStorage.setItem("Email", Email.value);
       localStorage.setItem("Password", Password.value);
       localStorage.setItem("Secret", Secret.value);
+      
+    }
   };
 
   return (
-    <FormControl>
+    <FormControl id='formControl'>
       <Box
         className="box"
         component="form"
@@ -114,6 +124,7 @@ const createAccount = () => {
           />
         </Container>
       </Box>
+
     </FormControl>
   );
 };
