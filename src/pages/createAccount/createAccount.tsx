@@ -3,7 +3,9 @@ import { Box } from "@mui/material";
 import { Container } from "@mui/material";
 import { Button } from "@mui/material";
 
+
 const createAccount = () => {
+  
   const storageAccount = () => {
     document.addEventListener("submit", (e) => e.preventDefault());
 
@@ -25,12 +27,14 @@ const createAccount = () => {
       localStorage.setItem("Email", Email.value);
       localStorage.setItem("Password", Password.value);
       localStorage.setItem("Secret", Secret.value);
-      
+
+      alert('Sucesso' + '\n' + 'Em breve você será redirecionado para a página de login')
     }
   };
 
   return (
-    <FormControl id='formControl'>
+    <FormControl id="formControl">
+
       <Box
         className="box"
         component="form"
@@ -124,7 +128,6 @@ const createAccount = () => {
           />
         </Container>
       </Box>
-
     </FormControl>
   );
 };
